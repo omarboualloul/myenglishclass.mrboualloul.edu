@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>English Hub — Classroom Website</title>
+  <meta name="description" content="Materials, assignments, tests, and language games for our English classes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="#home" aria-label="Home">English Hub</a>
+  <button class="nav-toggle" aria-controls="site-nav" aria-expanded="false">☰</button>
+  <nav id="site-nav" class="site-nav" aria-label="Primary">
+    <a href="#home">Home</a>
+    <a href="#classes">Classes</a>
+    <a href="#assignments">Assignments & Tests</a>
+    <a href="#games">Language Games</a>
+    <a href="#resources">Resources</a>
+    <a href="#calendar">Calendar</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="home" class="section hero">
+  <div class="hero-content">
+    <h1>Welcome to English</h1>
+    <p>This is our online space for lessons, assignments, tests, and language games.</p>
+    <div class="hero-ctas">
+      <a class="btn primary" href="#classes">Go to my class</a>
+      <a class="btn" href="#assignments">See assignments</a>
+      <a class="btn" href="#games">Play language games</a>
+    </div>
+  </div>
+  <div class="hero-panel">
+    <div class="panel">
+      <h2>This Week</h2>
+      <p id="this-week-text">We are exploring narrative writing and past tenses.</p>
+      <div class="quick-links">
+        <a class="chip" href="#" id="todays-slides" aria-label="Today’s slides">Today’s slides</a>
+        <a class="chip" href="#assignments">Homework</a>
+        <a class="chip" href="#quiz-section">Quick quiz</a>
+      </div>
+    </div>
+    <div class="panel">
+      <h2>Quick Links</h2>
+      <div class="quick-links">
+        <a class="chip" href="#assignments">Latest test</a>
+        <a class="chip" href="#games">Vocabulary games</a>
+        <a class="chip" href="#resources">Study guides</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<section id="classes" class="section">
+  <div class="section-head">
+    <h2>Classes</h2>
+    <p>Select your class for materials, schedules, and practice.</p>
+  </div>
+
+  <div class="grid cards">
+    <!-- Class Card 1 -->
+    <article class="card">
+      <h3>Grade 10 — ESL</h3>
+      <p>Find lesson materials, homework, and practice for Grade 10 ESL.</p>
+      <div class="card-actions">
+        <a class="btn" href="#g10-esl">Open</a>
+      </div>
+    </article>
+    <!-- Class Card 2 -->
+    <article class="card">
+      <h3>Grade 11 — ESL</h3>
+      <p>Units, study guides, and assessments for Grade 11 ESL.</p>
+      <div class="card-actions">
+        <a class="btn" href="#g11-esl">Open</a>
+      </div>
+    </article>
+    <!-- Class Card 3 -->
+    <article class="card">
+      <h3>Grade 12 — Academic English</h3>
+      <p>Reading, writing, and exam prep for Grade 12 Academic English.</p>
+      <div class="card-actions">
+        <a class="btn" href="#g12-ac">Open</a>
+      </div>
+    </article>
+  </div>
+
+  <!-- Example Class Detail Block (G10) -->
+  <div id="g10-esl" class="class-detail">
+    <h3>Grade 10 — ESL</h3>
+    <div class="grid two">
+      <article class="card">
+        <h4>This Week</h4>
+        <p>Focus: Narrative writing, past tenses, time markers.</p>
+        <div class="stack-sm">
+          <a class="btn" href="#" aria-disabled="true">Today’s slides</a>
+          <a class="btn" href="#quiz-section">Quiz: Past vs. Past Perfect</a>
+        </div>
+      </article>
+      <article class="card">
+        <h4>Unit Materials</h4>
+        <ul class="clean">
+          <li><a href="#">Unit 1 — Identity & Culture (PDF)</a></li>
+          <li><a href="#">Unit 2 — Environment (Slides)</a></li>
+          <li><a href="#">Unit 3 — Media & Technology (Docs)</a></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+
+  <!-- Example Class Detail Block (G11) -->
+  <div id="g11-esl" class="class-detail">
+    <h3>Grade 11 — ESL</h3>
+    <div class="grid two">
+      <article class="card">
+        <h4>Speaking & Writing Tasks</h4>
+        <p>Prepare a 1–2 minute talk on your opinion about social media.</p>
+        <a class="btn" href="#speaking-prompts">Open prompts</a>
+      </article>
+      <article class="card">
+        <h4>Extra Practice</h4>
+        <ul class="clean">
+          <li><a href="#games">Grammar games</a></li>
+          <li><a href="#games">Vocabulary drills</a></li>
+          <li><a href="#resources">Exam-style tasks</a></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+
+  <!-- Example Class Detail Block (G12) -->
+  <div id="g12-ac" class="class-detail">
+    <h3>Grade 12 — Academic English</h3>
+    <div class="grid two">
+      <article class="card">
+        <h4>Reading & Listening</h4>
+        <ul class="clean">
+          <li><a href="#">Article: Rhetorical Devices</a></li>
+          <li><a href="#">Podcast: Media Literacy</a></li>
+        </ul>
+      </article>
+      <article class="card">
+        <h4>Writing</h4>
+        <ul class="clean">
+          <li><a href="#">Essay planner (template)</a></li>
+          <li><a href="#">Model thesis statements</a></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="assignments" class="section">
+  <div class="section-head">
+    <h2>Assignments & Tests</h2>
+    <p>Upcoming tasks, submission links, and past assignments with models.</p>
+  </div>
+
+  <div class="grid two">
+    <article class="card">
+      <h3>Upcoming</h3>
+      <ul class="tasks">
+        <li>
+          <div>
+            <strong>Essay: My Future Plans</strong> — Grade 11
+            <div class="meta">Due: Fri, 10 Jan</div>
+          </div>
+          <a class="btn sm" href="#">Instructions</a>
+        </li>
+        <li>
+          <div>
+            <strong>Reading Quiz: Media & Technology</strong> — Grade 10
+            <div class="meta">Due: Wed, 15 Jan</div>
+          </div>
+          <a class="btn sm" href="#">Open Google Form</a>
+        </li>
+      </ul>
+    </article>
+
+    <article class="card" id="quiz-section">
+      <h3>Quick Quiz: Past vs. Past Perfect</h3>
+      <form id="quiz-form" class="quiz">
+        <fieldset>
+          <legend>1) By the time we arrived, they ____ already ____.</legend>
+          <label><input type="radio" name="q1" value="a" /> had, left</label>
+          <label><input type="radio" name="q1" value="b" /> have, leave</label>
+          <label><input type="radio" name="q1" value="c" /> did, leave</label>
+        </fieldset>
+        <fieldset>
+          <legend>2) I ____ dinner when she called.</legend>
+          <label><input type="radio" name="q2" value="a" /> have finished</label>
+          <label><input type="radio" name="q2" value="b" /> finished</label>
+          <label><input type="radio" name="q2" value="c" /> had finished</label>
+        </fieldset>
+        <button class="btn primary" type="submit">Submit</button>
+        <p id="quiz-result" role="status" aria-live="polite"></p>
+      </form>
+    </article>
+  </div>
+
+  <article class="card">
+    <h3>Current — Submit here</h3>
+    <div class="table">
+      <div class="row head">
+        <div>Assignment</div><div>Class</div><div>Due</div><div>Submit</div>
+      </div>
+      <div class="row">
+        <div>Narrative paragraph</div><div>G10</div><div>Fri, 10 Jan</div>
+        <div><a class="btn sm" href="#">Open LMS</a></div>
+      </div>
+      <div class="row">
+        <div>Opinion speech</div><div>G11</div><div>Mon, 20 Jan</div>
+        <div><a class="btn sm" href="#">Upload form</a></div>
+      </div>
+    </div>
+  </article>
+
+  <article class="card">
+    <h3>Past assignments</h3>
+    <ul class="clean">
+      <li>Descriptive writing — Model answer (PDF)</li>
+      <li>Listening set — Answer key (PDF)</li>
+    </ul>
+  </article>
+</section>
+
+<section id="games" class="section">
+  <div class="section-head">
+    <h2>Language Games</h2>
+    <p>Short, focused practice activities. Estimated time: 5–10 minutes each.</p>
+  </div>
+
+  <div class="grid cards">
+    <article class="card">
+      <h3>Vocabulary Flashcards</h3>
+      <p>Click to flip. Add your own words in <code>script.js</code>.</p>
+      <div class="flashcard" id="flashcard" aria-live="polite" tabindex="0">Click to flip</div>
+      <div class="stack-sm">
+        <button class="btn sm" id="prev-card" type="button">Prev</button>
+        <button class="btn sm" id="next-card" type="button">Next</button>
+      </div>
+    </article>
+
+    <article class="card">
+      <h3>Random Speaking Prompts</h3>
+      <p>Practice for 60–90 seconds per prompt.</p>
+      <div class="prompt" id="speaking-prompts" aria-live="polite">Press the button for a prompt.</div>
+      <button class="btn" id="new-prompt" type="button">New prompt</button>
+    </article>
+
+    <article class="card">
+      <h3>Grammar Challenge</h3>
+      <p>Identify the correct tense.</p>
+      <div id="grammar-challenge" class="challenge" aria-live="polite"></div>
+      <div id="grammar-options" class="stack-sm"></div>
+      <p id="grammar-feedback" role="status" aria-live="polite"></p>
+      <button class="btn sm" id="next-grammar" type="button">Next</button>
+    </article>
+  </div>
+</section>
+
+<section id="resources" class="section">
+  <div class="section-head">
+    <h2>Resources</h2>
+    <p>Study guides, templates, and recommended external sites.</p>
+  </div>
+
+  <div class="grid two">
+    <article class="card">
+      <h3>Downloads</h3>
+      <ul class="clean">
+        <li><a href="#">Writing frames (DOCX)</a></li>
+        <li><a href="#">Grammar reference (PDF)</a></li>
+        <li><a href="#">Reading strategies (PDF)</a></li>
+      </ul>
+    </article>
+    <article class="card">
+      <h3>Recommended</h3>
+      <ul class="clean">
+        <li><a href="#" rel="noopener">Vocabulary practice site</a></li>
+        <li><a href="#" rel="noopener">Listening with transcripts</a></li>
+        <li><a href="#" rel="noopener">Essay planning videos</a></li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section id="calendar" class="section">
+  <div class="section-head">
+    <h2>Calendar</h2>
+    <p>Key dates for tests, assignments, and events.</p>
+  </div>
+  <div class="card">
+    <p>You can embed your Google Calendar here. In Google Calendar: Settings → Make available to your domain/class → Get embed code → paste into this section.</p>
+    <!-- Example embed placeholder:
+    <iframe src="YOUR_GOOGLE_CALENDAR_EMBED_URL" style="border:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+    -->
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="section-head">
+    <h2>Contact & Help</h2>
+    <p>When I’m available and how to reach me.</p>
+  </div>
+  <div class="grid two">
+    <article class="card">
+      <h3>Office Hours</h3>
+      <p>Mon–Thu, 15:30–16:30</p>
+      <p>Room 203</p>
+    </article>
+    <article class="card">
+      <h3>Message me</h3>
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks — message sent.');">
+        <label>
+          Your name
+          <input type="text" required />
+        </label>
+        <label>
+          Your email
+          <input type="email" required />
+        </label>
+        <label>
+          Message
+          <textarea rows="4" required></textarea>
+        </label>
+        <button class="btn primary" type="submit">Send</button>
+      </form>
+    </article>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> English Hub. Built for learning.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

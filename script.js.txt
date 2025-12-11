@@ -1,0 +1,145 @@
+// Mobile nav toggle
+const toggle = document.querySelector('.nav-toggle');
+const nav = document.querySelector('#site-nav');
+if (toggle && nav){
+  toggle.addEventListener('click', ()=>{
+    const isOpen = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+}
+
+// Year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// This Week text (example hook)
+const thisWeek = document.getElementById('this-week-text');
+if (thisWeek){
+  // You can programmatically update per week.
+  // For now, it just stays with the default message in HTML.
+}
+
+// ===== Quick Quiz logic =====
+const quizForm = document.getElementById('quiz-form');
+const quizResult = document.getElementById('quiz-result');
+if (quizForm){
+  quizForm.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const answers = new FormData(quizForm);
+    let score = 0;
+    // Correct: q1=a, q2=c
+    if (answers.get('q1') === 'a') score++;
+    if (answers.get('q2') === 'c') score++;
+    quizResult.textContent = `Score: ${score}/2`;
+  });
+}
+
+// ===== Flashcards =====
+const flashcardEl = document.getElementById('flashcard');
+const prevCardBtn = document.getElementById('prev-card');
+const nextCardBtn = document.getElementById('next-card');
+
+const flashcards = [
+  {front: 'ubiquitous', back: 'present everywhere; widespread'},
+  {front: 'cohesion', back: 'logical connection; unity'},
+  {front: 'concise', back: 'brief yet comprehensive'},
+  {front: 'counterargument', back: 'an argument opposed to your thesis'}
+];
+let index = 0;
+let flipped = false;
+
+function renderCard(){
+  if (!flashcardEl) return;
+  const card = flashcards[index];
+  flashcardEl.textContent = flipped ? card.back : card.front;
+  flashcardEl.setAttribute('aria-label', flipped ? card.back : card.front);
+}
+if (flashcardEl){
+  renderCard();
+  flashcardEl.addEventListener('click', ()=>{ flipped = !flipped; renderCard(); });
+  flashcardEl.addEventListener('keypress', (e)=>{ if(e.key==='Enter'||e.key===' ') { flipped=!flipped; renderCard(); }});
+}
+if (prevCardBtn){
+  prevCardBtn.addEventListener('click', ()=>{
+    index = (index - 1 + flashcards.length) % flashcards.length;
+    flipped = false; renderCard();
+  });
+}
+if (nextCardBtn){
+  nextCardBtn.addEventListener('click', ()=>{
+    index = (index + 1) % flashcards.length;
+    flipped = false; renderCard();
+  });
+}
+
+// ===== Speaking Prompts =====
+const prompts = [
+  'Is social media beneficial or harmful for teenagers? Support your view.',
+  'Describe a place that changed how you see the world.',
+  'Should schools require uniforms? Why or why not?',
+  'Tell the story of a challenge you overcame.',
+  'How does technology shape how we communicate?'
+];
+const promptEl = document.getElementById('speaking-prompts');
+const newPromptBtn = document.getElementById('new-prompt');
+
+function newPrompt(){
+  const p = prompts[Math.floor(Math.random()*prompts.length)];
+  if (promptEl) promptEl.textContent = p;
+}
+if (newPromptBtn){ newPromptBtn.addEventListener('click', newPrompt); }
+
+// ===== Grammar Challenge =====
+const grammarItems = [
+  {
+    q: 'By the time the film started, we ____ already ____ our seats.',
+    options: ['had, taken', 'have, take', 'did, take'],
+    correct: 0
+  },
+  {
+    q: 'She ____ in London for two years before she moved to Madrid.',
+    options: ['lived', 'had lived', 'has lived'],
+    correct: 1
+  },
+  {
+    q: 'When I got to the station, the train ____.',
+    options: ['left', 'had left', 'has left'],
+    correct: 1
+  }
+];
+
+let gIndex = 0;
+const gQ = document.getElementById('grammar-challenge');
+const gOpts = document.getElementById('grammar-options');
+const gFeedback = document.getElementById('grammar-feedback');
+const gNext = document.getElementById('next-grammar');
+
+function renderGrammar(){
+  if (!gQ || !gOpts) return;
+  const item = grammarItems[gIndex];
+  gQ.textContent = item.q;
+  gOpts.innerHTML = '';
+  item.options.forEach((opt, i)=>{
+    const b = document.createElement('button');
+    b.className = 'btn sm';
+    b.type = 'button';
+    b.textContent = opt;
+    b.addEventListener('click', ()=>{
+      if (i === item.correct){
+        gFeedback.textContent = 'Correct!';
+        gFeedback.style.color = 'green';
+      } else {
+        gFeedback.textContent = 'Try again.';
+        gFeedback.style.color = 'var(--accent)';
+      }
+    });
+    gOpts.appendChild(b);
+  });
+  gFeedback.textContent = '';
+}
+if (gQ && gOpts){ renderGrammar(); }
+if (gNext){
+  gNext.addEventListener('click', ()=>{
+    gIndex = (gIndex + 1) % grammarItems.length;
+    renderGrammar();
+  });
+}
